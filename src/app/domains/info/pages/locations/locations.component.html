@@ -1,0 +1,11 @@
+@if (locations.isLoading()) {
+  <p>Cargando...</p>
+} @else if (locations.error()) {
+  <p>Error al cargar.</p>
+} @else {
+  <ul>
+    @for (location of locations.value(); track location.id) {
+      <li>{{ location.name }}</li>
+    }
+  </ul>
+}
