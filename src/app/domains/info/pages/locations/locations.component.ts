@@ -1,5 +1,6 @@
 import {
   afterNextRender,
+  ChangeDetectionStrategy,
   Component,
   inject,
   resource,
@@ -11,6 +12,7 @@ import { LocationsService } from '@shared/services/locations.service';
   selector: 'app-locations',
   imports: [],
   templateUrl: './locations.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class LocationsComponent {
   locationsService = inject(LocationsService);

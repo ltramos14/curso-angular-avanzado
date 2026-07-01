@@ -5,6 +5,7 @@ import {
   AfterViewInit,
   input,
   viewChild,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -14,6 +15,7 @@ import WaveSurfer from 'wavesurfer.js';
   selector: 'app-wave-audio',
   imports: [CommonModule],
   templateUrl: './wave-audio.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WaveAudioComponent implements AfterViewInit {
   readonly audioUrl = input.required<string>();
